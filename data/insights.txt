@@ -1,0 +1,104 @@
+Category neg
+van damme 16
+zeta - jones 16
+smith 15
+batman 14
+de palma 14
+eddie murphy 14
+killer 14
+tommy lee jones 14
+wild west 14
+mars 13
+murphy 13
+ship 13
+space 13
+brothers 12
+de bont 12
+deep impact 12
+end of days 12
+famke janssen 12
+harry 12
+high school 12
+julie 12
+last summer 12
+michael redman 12
+prinze jr 12
+robin 12
+sam 12
+still know 12
+van 12
+wild wild 12
+wild wild west 12
+willis 12
+baldwin 11
+eddie 11
+house 11
+jolie 11
+jones 11
+lee 11
+schumacher 11
+travolta 11
+west 11
+alien 10
+arnold 10
+arquette 10
+ashley judd 10
+bad guy 10
+battlefield earth 10
+billy crystal 10
+blair witch 10
+crystal 10
+de 10
+
+Category pos
+star wars 26
+disney 23
+war 23
+de niro 22
+jackie 21
+alien 20
+jackie chan 20
+private ryan 20
+truman show 20
+ben stiller 18
+cameron 18
+science fiction 18
+cameron diaz 16
+fiction 16
+jack 16
+phantom menace 16
+pulp fiction 16
+aliens 15
+horror 15
+damon 14
+high school 14
+jackie brown 14
+sci - fi 14
+sixth sense 14
+spielberg 14
+star trek 14
+gibson 13
+hanks 13
+ryan 13
+science 13
+ship 13
+wars 13
+animated 12
+big lebowski 12
+chan 12
+dark city 12
+eddie murphy 12
+fairy tale 12
+good will hunting 12
+jim carrey 12
+john cusack 12
+killer 12
+lee jones 12
+mel gibson 12
+saving private 12
+saving private ryan 12
+tommy lee 12
+tommy lee jones 12
+toy story 12
+truman 12
+
