@@ -5,7 +5,7 @@ Code examples and data for the KiwiPyCon 2014 NLP tutorial
 
 "Deep dive into understanding human language with Python" by Alyona Medelyan
 
-Slides: www.slideshare.net/zelandiya/
+Slides: http://www.slideshare.net/zelandiya/kiwipycon-2014-nlp-with-python-tutorial
 
 Abstract:
 
