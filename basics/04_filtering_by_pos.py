@@ -7,16 +7,32 @@ __author__ = 'a_medelyan'
 import nltk
 from nltk.corpus import movie_reviews
 from nltk.probability import FreqDist
+from time import gmtime, strftime
 
+# Test part of speech tagging
 words = movie_reviews.words('pos/cv000_29590.txt')
+pos = nltk.pos_tag(words)
+print pos
 
-# POS tag words
+# Strip words from text that aren't nouns or adjectives
+filtered_words = [x[0] for x in pos if x[1] in ('NN', 'JJ')]
 
-# Strip words from words that aren't nouns or adjectives
+print filtered_words
+print FreqDist(filtered_words).items()[:20]
 
-# Print stripped words
+print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 
-# Print most frequent words
+# Compare the most frequent words in both sets, while ignoring stopwords
+print ''
+for category in movie_reviews.categories():
 
-# Spare time? Compare the most frequent words in both sets, while ignoring stopwords
-# Caution (It will run for 1h on the entire movie reviews dataset, so use a subset)
+    print 'Category', category
+    all_words = movie_reviews.words(categories=category)[:1000]
+    pos = nltk.pos_tag(all_words)
+    all_filtered_words = [x[0] for x in pos if x[1] in ('NN', 'NNS', 'JJ') and len(x[0]) > 1]
+
+    all_words_by_frequency = FreqDist(all_filtered_words)
+    print all_words_by_frequency.items()[:20]
+
+print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+
