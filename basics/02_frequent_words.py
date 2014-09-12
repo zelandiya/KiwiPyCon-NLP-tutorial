@@ -7,11 +7,19 @@ from nltk.corpus import movie_reviews
 from nltk.probability import FreqDist
 
 words = movie_reviews.words('pos/cv000_29590.txt')
+words_by_frequency = FreqDist(words)
 
-# Calculate how many times each word appears in the review
+print 'Most frequent words in review'
+print words_by_frequency.items()[:20]
 
-# Print out the most frequent 20 words and their counts
+# Compare the most frequent words in both sets
+print ''
+for category in movie_reviews.categories():
 
-# Compare the most frequent words in positive and negative reviews
+    print 'Category', category
+    all_words = movie_reviews.words(categories=category)
+    all_words_by_frequency = FreqDist(all_words)
+    print all_words_by_frequency.items()[:20]
+
 
 # Spare time? Calculate the first 20 most frequent words for each category that are unique to that category
