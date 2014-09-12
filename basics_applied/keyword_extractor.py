@@ -64,9 +64,12 @@ def score_candidates(candidates, dictionary, tfidf):
     frequencies = FreqDist(candidates)
     for word in set(candidates):
         tf = float(frequencies[word]) / len(frequencies)
-        id = dictionary.token2id.get(word)
-        if id:
-            idf = tfidf.idfs[id]
+        my_id = dictionary.token2id.get(word)
+        # accounting for cases where the word
+        # has not been seen in the global corpus
+        # used to build tfidf model
+        if my_id:
+            idf = tfidf.idfs[my_id]
         else:
             idf = 0
         scores[word] = tf*idf

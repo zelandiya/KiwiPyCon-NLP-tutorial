@@ -27,6 +27,8 @@ print ''
 for category in movie_reviews.categories():
 
     print 'Category', category
+    # I used a cut off here to speed up the process
+    # Remove [:1000] to analyze all reviews, but it will take ~1h to process
     all_words = movie_reviews.words(categories=category)[:1000]
     pos = nltk.pos_tag(all_words)
     all_filtered_words = [x[0] for x in pos if x[1] in ('NN', 'NNS', 'JJ') and len(x[0]) > 1]

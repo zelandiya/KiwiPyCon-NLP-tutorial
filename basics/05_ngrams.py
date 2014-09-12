@@ -42,6 +42,8 @@ def has_no_boundaries(my_gram):
             return False
     return True
 
+# The second version skips all ngrams that start or end with a stopword
+# Also ignore all those that span a punctuation boundary
 
 my_ngrams = []
 for n in range(2, 5):
@@ -53,3 +55,6 @@ for n in range(2, 5):
 print 'Clean Ngrams', my_ngrams[:25]
 frequent4 = FreqDist(my_ngrams)
 print 'Clean Ngrams by freq', frequent4.items()[:25]
+
+# Spare time? Try using a sentence tokenizer first, then word tokenizer
+# To be more accurate about where the boundaries between the ngrams should be

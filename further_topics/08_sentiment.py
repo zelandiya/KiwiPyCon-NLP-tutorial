@@ -14,16 +14,7 @@ print blob.sentiment
 blob = TextBlob("I love this library")
 print blob.sentiment
 
-# Test on new movie reviews
-transcendence = ['../data/transcendence_1star.txt', '../data/transcendence_5star.txt', '../data/transcendence_8star.txt',
-                 '../data/transcendence_great.txt']
-
-# Insert code here
-
-
-# Spare time? Evaluate both ways of determining sentiment.
-# Also test out various polarity thresholds.
-
+# Evaluate on movie review data
 correct = 0
 for fileid in movie_reviews.fileids():
     raw = movie_reviews.raw(fileid)
@@ -40,3 +31,15 @@ for fileid in movie_reviews.fileids():
 
 accuracy = float(correct)/len(movie_reviews.fileids())
 print accuracy
+
+# Spare time? Evaluate the other way of determining sentiment. Also test out various polarity thresholds.
+
+# Test on new movie reviews
+transcendence = ['../data/transcendence_1star.txt', '../data/transcendence_5star.txt', '../data/transcendence_8star.txt',
+                 '../data/transcendence_great.txt']
+for review in transcendence:
+    f = open(review)
+    raw = f.read()
+    blob = TextBlob(raw)
+    sentiment = blob.sentiment
+    print review, sentiment.polarity, sentiment.subjectivity

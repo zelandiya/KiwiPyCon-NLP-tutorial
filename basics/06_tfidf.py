@@ -20,11 +20,9 @@ tfidf = models.TfidfModel(corpus)
 
 # IDF values
 for word in ['film', 'movie', 'comedy', 'violence', 'jolie']:
-    id = dictionary.token2id.get(word)
-    if id:
-        print word, id, tfidf.idfs[id]
-
-tfidf.save('../data/tfidf.model')
+    topic_id = dictionary.token2id.get(word)
+    if topic_id:
+        print word, topic_id, tfidf.idfs[topic_id]
 
 # Get filtered words
 words = movie_reviews.words('pos/cv000_29590.txt')
@@ -36,6 +34,7 @@ frequencies = FreqDist(filtered_words)
 print ''
 print 'By frequency:', frequencies.items()[:20]
 
+# Score keywords by tfidf value
 scores = {}
 
 for word in set(filtered_words):

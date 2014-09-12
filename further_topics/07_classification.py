@@ -43,4 +43,12 @@ print(nltk.classify.accuracy(classifier, test_set))
 transcendence = ['../data/transcendence_1star.txt', '../data/transcendence_5star.txt', '../data/transcendence_8star.txt',
                  '../data/transcendence_great.txt']
 
-# Insert code here
+# Re-train classifier on all documents
+classifier = nltk.NaiveBayesClassifier.train(featuresets)
+
+for review in transcendence:
+    f = open(review)
+    raw = f.read()
+    document = word_tokenize(raw)
+    features = document_features(document)
+    print review, classifier.classify(features)
